@@ -70,3 +70,8 @@ The E-Health Care System is a comprehensive platform designed to improve healthc
 6. **Run index.jsp file on added tomcat server**:
    ```bash
    src/main/webapp>index.jsp
+
+
+## Contact
+
+For questions or feedback, please contact shubhagarwal@myyahoo.com.<br>Connect with me on [LinkedIn](https://www.linkedin.com/in/shubhagarwal30/).
