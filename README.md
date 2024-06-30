@@ -1,4 +1,4 @@
-# E-Health Care System
+# E-Health Care System by Shubh Agarwal
 
 ## Overview
 
