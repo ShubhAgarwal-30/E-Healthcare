@@ -67,9 +67,61 @@ The E-Health Care System is a comprehensive platform designed to improve healthc
 3. **Install Tomcat Server 9 or 10**:
 4. **Install Eclipse IDE**:
 5. **Add tomacat server in Eclipse**
-6. **Run index.jsp file on added tomcat server**:
-   ```bash
-   src/main/webapp>index.jsp
+6. **Database Setup**
+    ```sql
+    CREATE DATABASE hospital;
+7. **Create the user_dtls table:**
+   ```sql
+   CREATE TABLE user_dtls (
+   id INT AUTO_INCREMENT PRIMARY KEY,
+   username VARCHAR(50) NOT NULL,
+   password VARCHAR(255) NOT NULL,
+   role ENUM('admin', 'doctor', 'user') NOT NULL,
+   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+   );
+8. **Create the patient table:**
+     ```sql
+     CREATE TABLE patient (
+     id INT AUTO_INCREMENT PRIMARY KEY,
+   user_id INT,
+   name VARCHAR(100) NOT NULL,
+   age INT,
+   gender ENUM('male', 'female', 'other'),
+   address TEXT,
+   phone VARCHAR(15),
+   email VARCHAR(100),
+   medical_history TEXT,
+   FOREIGN KEY (user_id) REFERENCES user_dtls(id)
+   );
+
+9. **Create the doctor table:**
+    ```sql
+     CREATE TABLE doctor (
+   id INT AUTO_INCREMENT PRIMARY KEY,
+   user_id INT,
+   name VARCHAR(100) NOT NULL,
+   specialty_id INT,
+   experience INT,
+   phone VARCHAR(15),
+   email VARCHAR(100),
+   FOREIGN KEY (user_id) REFERENCES user_dtls(id),
+   FOREIGN KEY (specialty_id) REFERENCES specialty(id)
+   );
+
+10. **Create the specialty table:**
+    ```sql
+    CREATE TABLE specialty (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    description TEXT
+    );
+11. **Change password of MySQl root in**
+    ```bash
+     src/main/java/com/db/DBConnect.java
+
+12. **Run index.jsp file on added tomcat server**:
+    ```bash
+     src/main/webapp/index.jsp
 
 
 ## Contact
