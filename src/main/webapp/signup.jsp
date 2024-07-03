@@ -42,7 +42,7 @@
 									name="fullname" type="text" class="form-control">
 							</div>
 							<div class="mb-3">
-								<label class="form-label">Email address</label> <input required
+								<label class="form-label">Email/Phone No.</label> <input required
 									name="email" type="email" class="form-control">
 							</div>
 							<div class="mb-3">
